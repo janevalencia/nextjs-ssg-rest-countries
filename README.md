@@ -7,36 +7,36 @@ This repo is to be forked, copied, and used for educational-purpose only.
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Requirement](#requirement)
-  - [Links](#links)
-  - [Local setup](#local-setup)
+  - [The challenge](#💪-the-challenge)
+  - [Requirement](#✔️-requirement)
+  - [Links](#🔗-links)
+  - [Local setup](#💻-local-setup)
 - [Process](#process)
-  - [Technical-stacks](#technical-stacks)
-  - [What I learned](#what-i-learned)
-  - [Future backlogs](#future-backlogs)
-  - [Useful resources](#useful-resources)
-  - [Deployment](#deployment)
-- [Author](#author)
-- [Final thoughts](#final-thoughts)
+  - [Technical-stacks](#🧱-technical-stacks)
+  - [What I learned](#🤔-what-i-learned)
+  - [Future backlogs](#📗-future-backlogs)
+  - [Useful resources](#📰-useful-resources)
+  - [Deployment](#🌐-deployment)
+- [Author](#🐱‍💻-author)
+- [Final thoughts](#💡-final-thoughts)
 
 ## Overview
 
 **To do this challenge, you should have a good understanding of HTML, CSS, JavaScript, and React.**
 
-![Design preview for the REST Countries API with with Theme-Switcher](./design/desktop-preview.jpg).
+Check the mobile and desktop design in [/design](./design/) folder.
 
-[Please also check the style-guide](./style-guide.md) for color-theme, typography, icons to be used.
+Check [the style-guide](./style-guide.md) for color-theme, typography, icons to be used.
 
 There are no others assets for this challenge, as the country flags will be pulled from the [REST Countries API](https://restcountries.com) and you can use an icon font library for the icons.
 
-### The challenge
+### 💪 The challenge
 
 Your challenge is to integrate with the [REST Countries API](https://restcountries.com) to pull country data and display it similar or as close to the design file.
 
 You can use any JavaScript framework/library and have complete control over which packages you use to do things like make HTTP requests or style your project.
 
-### Requirement
+### ✔️ Requirement
 
 Your users should be able to:
 
@@ -47,12 +47,14 @@ Your users should be able to:
 - Click through to the border countries on the detail page.
 - Toggle the color scheme between light and dark mode.
 
-### Links
+Your app must be mobile-responsive!
+
+### 🔗 Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-### Local setup
+### 💻 Local setup
 
 This project is bootstraped using `yarn`.
 
@@ -67,7 +69,7 @@ Further, before you deploy always making sure you have run `yarn lint` to ensure
 
 ## Process
 
-### Technical-stacks
+### 🧱 Technical-stacks
 
 - HTML5.
 - CSS with [TailwindCSS](https://tailwindcss.com/).
@@ -76,31 +78,23 @@ Further, before you deploy always making sure you have run `yarn lint` to ensure
 - [React-Icons](https://react-icons.github.io/react-icons/) - Icons, but feel free to use FontAwesome or any other icon-libraries.
 - [Axios](https://axios-http.com/docs/intro) - Promise-based HTTP Client, but feel free to use `fetch()`.
 
-### What I learned
+### 🤔 What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+TBA
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Future backlogs
+### 📗 Future backlogs
 
 TBA
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
+### 📰 Useful resources
 
 TBA
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-### Deployment
+### 🌐 Deployment
 
 As this project is built on using NextJS, I decide to use Vercel to host. 
-
-Check the [deployed-site](TBA).
 
 How to deploy NextJS project to Vercel:
 1. TBA
@@ -114,21 +108,21 @@ Simply choose the platform you are most comfortable and familiar using.
 
 Remember to copy/paste any of your production environment variable into the host platform you are using.
 
-## Author
+## 🐱‍💻 Author
 
 This solution is fully developed by Jane Valencia. 
 
 Connect with me and drop a 👋 (hello):
 
-- LinkedIn - [@janevalencia](https://www.linkedin.com/in/janevalencia/)
-- Medium - [@yourusername](https://medium.com/@janevalencia)
-- Instagram - [@janevlencia](https://www.instagram.com/janevlencia)
+- [LinkedIn](https://www.linkedin.com/in/janevalencia/)
+- [Medium](https://medium.com/@janevalencia)
+- [Instagram](https://www.instagram.com/janevlencia)
 
-## Final thoughts
+## 💡 Final thoughts
 
 I had a lot of fun building this challenge! 
 
-I always love receiving feedback as it helps me improving. So if you have anything you'd like to mention or have any questions over the solution, please drop in your message into the [discussion-thread](TBA).
+I love receiving feedback as it helps me improving. So if you have anything you'd like to mention or have any questions over the solution, please drop in your message into the [discussion-thread](TBA).
 
 This challenge is completely free and made by the awesome team of Frontend Mentor (FEM). Please continue sharing it with anyone who will find it useful for practice.
 
