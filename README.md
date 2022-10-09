@@ -7,18 +7,18 @@ This repo is to be forked, copied, and used for educational-purpose only.
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#💪-the-challenge)
-  - [Requirement](#✔️-requirement)
-  - [Links](#🔗-links)
-  - [Local setup](#💻-local-setup)
+  - [The challenge](#the-challenge)
+  - [Requirement](#requirement)
+  - [Links](#links)
+  - [Local setup](#local-setup)
 - [Process](#process)
-  - [Technical-stacks](#🧱-technical-stacks)
-  - [What I learned](#🤔-what-i-learned)
-  - [Future backlogs](#📗-future-backlogs)
-  - [Useful resources](#📰-useful-resources)
-  - [Deployment](#🌐-deployment)
-- [Author](#🐱‍💻-author)
-- [Final thoughts](#💡-final-thoughts)
+  - [Technical-stacks](#technical-stacks)
+  - [What I learned](#what-i-learned)
+  - [Future backlogs](#future-backlogs)
+  - [Useful resources](#useful-resources)
+  - [Deployment](#deployment)
+- [Author](#author)
+- [Final thoughts](#final-thoughts)
 
 ## Overview
 
@@ -30,13 +30,13 @@ Check [the style-guide](./style-guide.md) for color-theme, typography, icons to 
 
 There are no others assets for this challenge, as the country flags will be pulled from the [REST Countries API](https://restcountries.com) and you can use an icon font library for the icons.
 
-### 💪 The challenge
+### The challenge
 
 Your challenge is to integrate with the [REST Countries API](https://restcountries.com) to pull country data and display it similar or as close to the design file.
 
 You can use any JavaScript framework/library and have complete control over which packages you use to do things like make HTTP requests or style your project.
 
-### ✔️ Requirement
+### Requirement
 
 Your users should be able to:
 
@@ -49,12 +49,12 @@ Your users should be able to:
 
 Your app must be mobile-responsive!
 
-### 🔗 Links
+### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-### 💻 Local setup
+### Local setup
 
 This project is bootstraped using `yarn`.
 
@@ -69,7 +69,7 @@ Further, before you deploy always making sure you have run `yarn lint` to ensure
 
 ## Process
 
-### 🧱 Technical-stacks
+### Technical-stacks
 
 - HTML5.
 - CSS with [TailwindCSS](https://tailwindcss.com/).
@@ -78,21 +78,21 @@ Further, before you deploy always making sure you have run `yarn lint` to ensure
 - [React-Icons](https://react-icons.github.io/react-icons/) - Icons, but feel free to use FontAwesome or any other icon-libraries.
 - [Axios](https://axios-http.com/docs/intro) - Promise-based HTTP Client, but feel free to use `fetch()`.
 
-### 🤔 What I learned
+### What I learned
 
 TBA
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
-### 📗 Future backlogs
+### Future backlogs
 
 TBA
 
-### 📰 Useful resources
+### Useful resources
 
 TBA
 
-### 🌐 Deployment
+### Deployment
 
 As this project is built on using NextJS, I decide to use Vercel to host. 
 
@@ -108,7 +108,7 @@ Simply choose the platform you are most comfortable and familiar using.
 
 Remember to copy/paste any of your production environment variable into the host platform you are using.
 
-## 🐱‍💻 Author
+## Author
 
 This solution is fully developed by Jane Valencia. 
 
@@ -118,7 +118,7 @@ Connect with me and drop a 👋 (hello):
 - [Medium](https://medium.com/@janevalencia)
 - [Instagram](https://www.instagram.com/janevlencia)
 
-## 💡 Final thoughts
+## Final thoughts
 
 I had a lot of fun building this challenge! 
 
