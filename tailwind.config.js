@@ -12,8 +12,15 @@ module.exports = {
       'desktop' : '1440px',                // => @media (min-width: 1440px) { ... }
     },
     fontFamily: {
-      sans      : ['Nunito Sans', 'sans-serif'],
-      serif     : ['serif'],
+      sans  : ['Nunito Sans', 'sans-serif'],
+      serif : ['serif'],
+    },
+    fontSize: {
+      xs    : ['12px', '16px'],
+      sm    : ['14px', '20px'],
+      base  : ['16px', '24px'],
+      lg    : ['20px', '28px'],
+      xl    : ['24px', '32px'],
     },
     extend: {
       colors: {
