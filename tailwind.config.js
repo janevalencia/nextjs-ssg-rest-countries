@@ -21,6 +21,8 @@ module.exports = {
       base  : ['16px', '24px'],
       lg    : ['20px', '28px'],
       xl    : ['24px', '32px'],
+      '2xl' : ['36px', '32px'],
+      '3xl' : ['48px', '32px'],
     },
     extend: {
       colors: {
@@ -29,7 +31,7 @@ module.exports = {
         'lt-mode-text'    : 'hsl(200, 15%, 8%)',
         'lt-mode-input'   : 'hsl(0, 0%, 52%)',
         'lt-mode-bg'      : 'hsl(0, 0%, 98%)',
-        'white': 'hsl(0, 0%, 100%)',
+        'white'           : 'hsl(0, 0%, 100%)',
       }
     },
   },
