@@ -15,7 +15,16 @@ module.exports = {
       sans      : ['Nunito Sans', 'sans-serif'],
       serif     : ['serif'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        'dk-mode-element' : 'hsl(209, 23%, 22%)',
+        'dk-mode-bg'      : 'hsl(207, 26%, 17%)',
+        'lt-mode-text'    : 'hsl(200, 15%, 8%)',
+        'lt-mode-input'   : 'hsl(0, 0%, 52%)',
+        'lt-mode-bg'      : 'hsl(0, 0%, 98%)',
+        'white': 'hsl(0, 0%, 100%)',
+      }
+    },
   },
   plugins: [],
 }
