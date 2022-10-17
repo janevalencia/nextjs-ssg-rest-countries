@@ -4,10 +4,15 @@
 
 /* extending tw-base */
 @layer base {
-    h1 {
-        @apply text-3xl;
+    body {
+        @apply text-base font-normal;
     }
-    h2 {
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold;
+    }
+
+    h1, h2 {
         @apply text-2xl
     }
     h3 {
