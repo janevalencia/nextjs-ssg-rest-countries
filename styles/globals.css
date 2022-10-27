@@ -20,7 +20,7 @@
     }
 
     a {
-        @apply cursor-pointer;
+        @apply cursor-pointer text-gray-500 hover:text-gray-800 duration-500;
     }
 
     button {

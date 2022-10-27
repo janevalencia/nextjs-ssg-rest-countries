@@ -46,7 +46,7 @@ const Footer = (props: FooterProps) => {
                 <h2 className="font-bold text-sm tablet:text-base">
                     Resources
                 </h2>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col">
                     <a
                         href="https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca"
                         target="_blank"
