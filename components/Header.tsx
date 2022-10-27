@@ -6,7 +6,7 @@ const Header = () => {
             <h1 className="text-lg tablet:text-xl desktop:text-2xl">Where in the world?</h1>
             <div className="flex justify-end items-center gap-2 cursor-pointer text-base desktop:text-lg">
                 <BsFillMoonFill className="mx-1 my-2" />
-                <p className="text-bold"><span>Dark</span> Mode</p>
+                <p className="text-bold"><span className="underline text-gray-600 hover:text-gray-800 duration-500">Dark</span> Mode</p>
             </div>
         </header>
     );
