@@ -32,7 +32,12 @@ const Layout = ({ children }: { children: ReactNode }) => {
             </Head>
             <Header />
             {children}
-            <Footer />
+            <Footer 
+                github="https://github.com/janevalencia/fem-rest-countries" 
+                linkedin="https://www.linkedin.com/in/janevalencia"
+                instagram="https://www.instagram.com/janevlencia"
+                medium="https://medium.com/@janevalencia"
+            />
         </>
     );
 };
