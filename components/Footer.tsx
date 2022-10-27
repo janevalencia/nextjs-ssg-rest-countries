@@ -26,21 +26,15 @@ type FooterProps = {
 // Render component.
 const Footer = (props: FooterProps) => {
     return (
-        <footer className="w-full p-6">
-            <div className="border-t-2 border-gray-100 py-4">
-                <Image
-                    src="/android-chrome-512x512.png"
-                    alt="by janevalencia"
-                    width={20}
-                    height={20}
-                />
+        <footer className="w-full p-6 border-t-2 border-gray-100 tablet:flex align-top justify-between gap-2">
+            <div className="mb-4">
                 <h2 className="font-bold text-sm laptop:text-base">
                     Frontend Mentor Challenge
                 </h2>
                 <p className="text-xs tablet:text-sm">
-                    Copyright &copy; {props.year} {props.author}. All rights
-                    reserved.
+                    Copyright &copy; {props.year} {props.author}.
                 </p>
+                <p className="text-xs tablet:text-sm">All rights reserved.</p>
             </div>
             <div className="mb-4">
                 <h2 className="font-bold text-sm tablet:text-base">
@@ -70,7 +64,7 @@ const Footer = (props: FooterProps) => {
                     </a>
                 </div>
             </div>
-            <div className="mb-4">
+            <div className="mb-4 flex flex-col justify-between tablet:text-right gap-4">
                 <div className="flex gap-2">
                     <a href={props.github} target="_blank" rel="noreferrer">
                         <AiFillGithub size={30} />
@@ -84,6 +78,14 @@ const Footer = (props: FooterProps) => {
                     <a href={props.medium} target="_blank" rel="noreferrer">
                         <AiFillMediumCircle size={30} />
                     </a>
+                </div>
+                <div className="pl-1">
+                    <Image
+                        src="/android-chrome-512x512.png"
+                        alt="by janevalencia"
+                        width={20}
+                        height={20}
+                    />
                 </div>
             </div>
         </footer>
