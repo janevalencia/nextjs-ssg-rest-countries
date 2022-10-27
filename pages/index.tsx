@@ -7,7 +7,7 @@ const Home: NextPage = () => {
             <Head>
               <title>Our World, Our Earth</title>
             </Head>
-            <div className="min-h-screen p-6">
+            <div className="min-h-screen w-full p-6">
                 Main Content
             </div>
         </>
