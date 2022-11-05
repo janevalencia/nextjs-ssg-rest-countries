@@ -1,6 +1,7 @@
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
-import axios from 'axios';
 import Head from "next/head";
+import { TCountry } from "../types";
+import axios from 'axios';
 
 const Home = ({
     countries,
@@ -22,7 +23,7 @@ const Home = ({
 };
 
 export const getStaticProps: GetStaticProps<{
-    countries: any[];
+    countries: TCountry[];
 }> = async () => {
 
     // Fetch data from countries API.
