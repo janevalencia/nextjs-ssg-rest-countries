@@ -13,15 +13,11 @@ const Home = ({
                 <title>Our World, Our Earth</title>
             </Head>
             <div className="min-h-screen bg-lt-mode-bg w-full p-6">
-                <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-2">
-                    {countries.map((country, index) => (
+                <div className="grid grid-cols-1 px-10 py-2 tablet:px-0 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-10">
+                    {countries.map((item, index) => (
                         <Country
                             key={index}
-                            name={country.name}
-                            capital={country.capital}
-                            region={country.region}
-                            population={country.population}
-                            img={country.flags.png}
+                            country={item}
                         />
                     ))}
                 </div>
