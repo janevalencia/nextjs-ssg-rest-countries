@@ -12,7 +12,7 @@ const Home = ({
             <Head>
                 <title>Our World, Our Earth</title>
             </Head>
-            <div className="min-h-screen w-full p-6">
+            <div className="min-h-screen bg-lt-mode-bg w-full p-6">
                 <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-2">
                     {countries.map((country, index) => (
                         <Country
