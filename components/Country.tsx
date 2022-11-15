@@ -33,7 +33,7 @@ const Country = ({ country }: { country: TCountry }) => {
                     </p>
                     <p className="font-light">
                         <span className="font-normal">Capital: </span>
-                        {country.capital}
+                        {country.capital ? country.capital : "N/A"}
                     </p>
                 </div>
             </div>
