@@ -4,14 +4,17 @@ import api from "../api";
 import { TCountry } from "../types";
 import { Country } from "../components";
 import { GrSearch } from "react-icons/gr";
+import React, { useState } from "react";
 
 const Home = ({
     countries,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+
+
     return (
         <>
             <Head>
-                <title>Our World, Our Earth</title>
+                <title>World of Countries</title>
             </Head>
             <div className="min-h-screen bg-lt-mode-bg w-full px-6">
                 {/* Toolbar */}
@@ -21,7 +24,7 @@ const Home = ({
                         <GrSearch size={18} className="text-gray-600" />
                         <input
                             className="text-lt-mode-text w-full p-2 bg-transparent focus:outline-none"
-                            type="text"
+                            type="search"
                             placeholder="Search for a country..."
                         />
                     </div>
