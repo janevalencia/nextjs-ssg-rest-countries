@@ -1,10 +1,9 @@
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
+import React, { useState } from "react";
 import api from "../api";
 import { TCountry } from "../types";
-import { Country } from "../components";
-import { GrSearch } from "react-icons/gr";
-import React, { useState } from "react";
+import { Country, SearchBar } from "../components";
 
 const Home = ({
     countries,
@@ -43,16 +42,7 @@ const Home = ({
                 {/* Toolbar */}
                 <div className="py-4">
                     {/* Search Bar */}
-                    <div className="flex flex-row justify-between items-center gap-4 px-4 py-2 tablet:w-[500px] bg-white rounded-md shadow-md">
-                        <GrSearch size={18} className="text-gray-600" />
-                        <input
-                            className="text-lt-mode-text w-full p-2 bg-transparent focus:outline-none"
-                            type="search"
-                            placeholder="Search for a country..."
-                            onChange={(e) => setQuery(e.target.value)}
-                            value={query}
-                        />
-                    </div>
+                    <SearchBar value={query} setValue={setQuery} placeholder="Search for a country..." />
                 </div>
 
                 {/* Country List */}
