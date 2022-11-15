@@ -9,7 +9,7 @@ type CountryProps = {
 // Render Country component.
 const Country = ({ country }: { country: TCountry }) => {
     return (
-        <div className="bg-white shadow-md rounded-md">
+        <div className="bg-white shadow-md rounded-md hover:cursor-pointer hover:scale-105 duration-300">
             <div className="mb-4">
                 <picture>
                     <source srcSet={country.flags.png} type="image/png" />
@@ -33,7 +33,7 @@ const Country = ({ country }: { country: TCountry }) => {
                     </p>
                     <p className="font-light">
                         <span className="font-normal">Capital: </span>
-                        {country.capital}
+                        {country.capital ? country.capital : "N/A"}
                     </p>
                 </div>
             </div>
