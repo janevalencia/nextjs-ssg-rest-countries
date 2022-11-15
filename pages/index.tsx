@@ -9,7 +9,30 @@ import React, { useState } from "react";
 const Home = ({
     countries,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+    // Define state of country list.
+    const [list] = useState<TCountry[]>(countries);
 
+    // Define state for the search input.
+    const [query, setQuery] = useState<string>("");
+
+    // Search by country name, capital, or alternative name spellings.
+    const searchCountry = (countries: TCountry[]) => {
+        return countries.filter((country) => {
+            return (
+                country.name.toLowerCase().indexOf(query.toLowerCase()) > -1 ||
+                (country.capital &&
+                    country.capital.toLowerCase().indexOf(query.toLowerCase()) >
+                        -1) ||
+                (country.altSpellings &&
+                    country.altSpellings.some(
+                        (spelling) =>
+                            spelling
+                                .toLowerCase()
+                                .indexOf(query.toLowerCase()) > -1
+                    ))
+            );
+        });
+    };
 
     return (
         <>
@@ -26,15 +49,21 @@ const Home = ({
                             className="text-lt-mode-text w-full p-2 bg-transparent focus:outline-none"
                             type="search"
                             placeholder="Search for a country..."
+                            onChange={(e) => setQuery(e.target.value)}
+                            value={query}
                         />
                     </div>
                 </div>
 
                 {/* Country List */}
                 <div className="grid grid-cols-1 px-10 py-4 tablet:px-0 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-10">
-                    {countries.map((item, index) => (
-                        <Country key={index} country={item} />
-                    ))}
+                    {searchCountry(list).length > 0 ? (
+                        searchCountry(list).map((item, index) => (
+                            <Country key={index} country={item} />
+                        ))
+                    ) : (
+                        <p>No such country found.</p>
+                    )}
                 </div>
             </div>
         </>
