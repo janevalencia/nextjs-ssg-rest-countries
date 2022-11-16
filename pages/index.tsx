@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps<{
     countries: TCountry[];
 }> = async () => {
     // Fetch data from countries API.
-    const res = await api.get("all");
+    const res = await api.get("all?fields=name,altSpellings,callingCodes,capital,subregion,region,population,latlng,area,timezones,borders,flags,currencies,languages,independent");
     const countries = await res.data;
 
     // Return the static props.
