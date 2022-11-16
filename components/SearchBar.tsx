@@ -12,7 +12,7 @@ type SearchBarProps = {
 const SearchBar = ({value, setValue, placeholder} : SearchBarProps) => {
     return (
         <div className="flex flex-row justify-between items-center gap-4 px-4 py-2 tablet:w-[400px] laptop:w-[500px] bg-white rounded-md shadow-md">
-            <GrSearch size={18} className="text-gray-600" />
+            <GrSearch size={18} />
             <input
                 className="text-lt-mode-text w-full p-2 bg-transparent focus:outline-none"
                 type="search"
