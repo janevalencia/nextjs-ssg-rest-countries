@@ -3,7 +3,7 @@ import Head from "next/head";
 import React, { useState } from "react";
 import api from "../api";
 import { TCountry } from "../types";
-import { Country, SearchBar } from "../components";
+import { Country, Filters, SearchBar } from "../components";
 
 const Home = ({
     countries,
@@ -13,6 +13,9 @@ const Home = ({
 
     // Define state for the search input.
     const [query, setQuery] = useState<string>("");
+
+    // Define state of filter option activated.
+    const [filter, setFilter] = useState<string>("");
 
     // Search by country name, capital, or alternative name spellings.
     const searchCountry = () => {
@@ -40,9 +43,11 @@ const Home = ({
             </Head>
             <div className="min-h-screen bg-lt-mode-bg w-full px-6">
                 {/* Toolbar */}
-                <div className="py-4">
+                <div className="flex flex-col gap-8 tablet:flex-row tablet:gap-2 py-4 justify-between">
                     {/* Search Bar */}
                     <SearchBar value={query} setValue={setQuery} placeholder="Search for a country..." />
+                    {/* Filter */}
+                    <Filters />
                 </div>
 
                 {/* Country List */}
