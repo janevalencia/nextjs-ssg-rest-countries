@@ -15,8 +15,8 @@ const Home = ({
     const [query, setQuery] = useState<string>("");
 
     // Search by country name, capital, or alternative name spellings.
-    const searchCountry = (countries: TCountry[]) => {
-        return countries.filter((country) => {
+    const searchCountry = () => {
+        return list.filter((country) => {
             return (
                 country.name.toLowerCase().indexOf(query.toLowerCase()) > -1 ||
                 (country.capital &&
@@ -47,8 +47,8 @@ const Home = ({
 
                 {/* Country List */}
                 <div className="grid grid-cols-1 px-10 py-4 tablet:px-0 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-10">
-                    {searchCountry(list).length > 0 ? (
-                        searchCountry(list).map((item, index) => (
+                    {searchCountry().length > 0 ? (
+                        searchCountry().map((item, index) => (
                             <Country key={index} country={item} />
                         ))
                     ) : (
