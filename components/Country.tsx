@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { TCountry } from "../types";
 
 // Define the props required for the Country component.
