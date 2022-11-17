@@ -45,7 +45,11 @@ const Home = ({
                 {/* Toolbar */}
                 <div className="flex flex-col gap-8 tablet:flex-row tablet:gap-2 py-4 justify-between">
                     {/* Search Bar */}
-                    <SearchBar value={query} setValue={setQuery} placeholder="Search for a country..." />
+                    <SearchBar
+                        value={query}
+                        setValue={setQuery}
+                        placeholder="Search for a country..."
+                    />
                     {/* Filter */}
                     <Filters />
                 </div>
@@ -69,7 +73,9 @@ export const getStaticProps: GetStaticProps<{
     countries: TCountry[];
 }> = async () => {
     // Fetch data from countries API.
-    const res = await api.get("all?fields=name,altSpellings,callingCodes,capital,subregion,region,population,latlng,area,timezones,borders,flags,currencies,languages,independent");
+    const res = await api.get(
+        "all?fields=name,altSpellings,callingCodes,capital,subregion,region,population,latlng,area,timezones,borders,flags,currencies,languages,independent"
+    );
     const countries = await res.data;
 
     // Return the static props.
