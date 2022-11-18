@@ -20,6 +20,9 @@ const Home = ({
     // Define state of filter option activated.
     const [filter, setFilter] = useState<string>("");
 
+    // Define state of regions list.
+    const [regions] = useState<string[]>(["Africa", "Americas", "Asia", "Europe", "Oceania"])
+
     // Component re-render when there is search query & change in list state.
     useEffect(() => {
         setSearchResults(
@@ -48,45 +51,14 @@ const Home = ({
 
     // Component re-render when a filter is activated.
     useEffect(() => {
-        switch (filter.toLowerCase()) {
-            case "africa":
-                setList(
-                    countries.filter((country) => {
-                        return country.region.toLowerCase() === "africa";
-                    })
-                );
-                break;
-            case "america":
-                setList(
-                    countries.filter((country) => {
-                        return country.region.toLowerCase() === "america";
-                    })
-                );
-                break;
-            case "asia":
-                setList(
-                    countries.filter((country) => {
-                        return country.region.toLowerCase() === "asia";
-                    })
-                );
-                break;
-            case "europe":
-                setList(
-                    countries.filter((country) => {
-                        return country.region.toLowerCase() === "europe";
-                    })
-                );
-                break;
-            case "oceania":
-                setList(
-                    countries.filter((country) => {
-                        return country.region.toLowerCase() === "oceania";
-                    })
-                );
-                break;
-            default:
-                setList(countries);
-                break;
+        if (filter !== "") {
+            setList(
+                countries.filter((country) => {
+                    return country.region.toLowerCase() === filter.toLowerCase();
+                })
+            );
+        } else {
+            setList(countries);
         }
     }, [filter, countries]);
 
@@ -105,7 +77,7 @@ const Home = ({
                         placeholder="Search for a country..."
                     />
                     {/* Filter */}
-                    <Filters regions={["Africa", "Americas", "Asia", "Europe", "Oceania"]} />
+                    <Filters regions={regions} />
                 </div>
 
                 {/* Country List */}
