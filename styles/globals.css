@@ -17,6 +17,6 @@
     }
 
     button {
-        @apply border shadow-md rounded-md px-5 py-2;
+        @apply px-5 py-2;
     }
 }

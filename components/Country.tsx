@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { TCountry } from "../types";
 
 // Define the props required for the Country component.
@@ -20,7 +19,7 @@ const Country = ({ country }: { country: TCountry }) => {
                     />
                 </picture>
             </div>
-            <div className="mb-4 p-6 h-full">
+            <div className="mb-4 p-6">
                 <h2 className="text-lg">{country.name}</h2>
                 <div className="mt-4">
                     <p className="font-light">

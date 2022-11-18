@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     screens: {
       'mobile'  : {'max' : '375px'},       // => @media (max-width: 375px) { ... }
-      'tablet'  : '640px',                 // => @media (min-width: 640px) { ... }
-      'laptop'  : '1024px',                // => @media (min-width: 1024px) { ... }
-      'desktop' : '1440px',                // => @media (min-width: 1440px) { ... }
+      'tablet'  : '768px',                 // => @media (min-width: 640px) { ... }
+      'laptop'  : '1280px',                // => @media (min-width: 1024px) { ... }
+      'desktop' : '1920px',                // => @media (min-width: 1440px) { ... }
     },
     fontFamily: {
       sans  : ['Nunito Sans', 'sans-serif'],
