@@ -9,7 +9,7 @@ const Home = ({
     countries,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
     // Define state of country list.
-    const [list, setList] = useState<TCountry[]>(countries);
+    const [list, setList] = useState<TCountry[]>([]);
 
     // Define state of filtered / searched country list.
     const [searchResults, setSearchResults] = useState<TCountry[]>([]);
@@ -22,25 +22,73 @@ const Home = ({
 
     // Component re-render when there is search query & change in list state.
     useEffect(() => {
-        setSearchResults(list.filter((country) => {
-            return (
-                country.name.toLowerCase().indexOf(query.toLowerCase()) > -1 ||
-                (country.capital &&
-                    country.capital.toLowerCase().indexOf(query.toLowerCase()) >
-                        -1) ||
-                (country.altSpellings &&
-                    country.altSpellings.some(
-                        (spelling) =>
-                            spelling
-                                .toLowerCase()
-                                .indexOf(query.toLowerCase()) > -1
-                    ))
-            );
-        }));
+        setSearchResults(
+            list.filter((country) => {
+                return (
+                    country.name.toLowerCase().indexOf(query.toLowerCase()) >
+                        -1 ||
+                    (country.capital &&
+                        country.capital
+                            .toLowerCase()
+                            .indexOf(query.toLowerCase()) > -1) ||
+                    (country.altSpellings &&
+                        country.altSpellings.some(
+                            (spelling) =>
+                                spelling
+                                    .toLowerCase()
+                                    .indexOf(query.toLowerCase()) > -1
+                        ))
+                );
+            })
+        );
 
         // Clean up effect.
-        return (() => setSearchResults([]));
-    }, [query, list])
+        return () => setSearchResults([]);
+    }, [query, list]);
+
+    // Component re-render when a filter is activated.
+    useEffect(() => {
+        switch (filter.toLowerCase()) {
+            case "africa":
+                setList(
+                    countries.filter((country) => {
+                        return country.region.toLowerCase() === "africa";
+                    })
+                );
+                break;
+            case "america":
+                setList(
+                    countries.filter((country) => {
+                        return country.region.toLowerCase() === "america";
+                    })
+                );
+                break;
+            case "asia":
+                setList(
+                    countries.filter((country) => {
+                        return country.region.toLowerCase() === "asia";
+                    })
+                );
+                break;
+            case "europe":
+                setList(
+                    countries.filter((country) => {
+                        return country.region.toLowerCase() === "europe";
+                    })
+                );
+                break;
+            case "oceania":
+                setList(
+                    countries.filter((country) => {
+                        return country.region.toLowerCase() === "oceania";
+                    })
+                );
+                break;
+            default:
+                setList(countries);
+                break;
+        }
+    }, [filter, countries]);
 
     return (
         <>
@@ -57,7 +105,7 @@ const Home = ({
                         placeholder="Search for a country..."
                     />
                     {/* Filter */}
-                    <Filters />
+                    <Filters regions={["Africa", "Americas", "Asia", "Europe", "Oceania"]} />
                 </div>
 
                 {/* Country List */}
