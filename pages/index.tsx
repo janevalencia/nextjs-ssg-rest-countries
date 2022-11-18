@@ -77,7 +77,7 @@ const Home = ({
                         placeholder="Search for a country..."
                     />
                     {/* Filter */}
-                    <Filters regions={regions} />
+                    <Filters regions={regions} setFilter={setFilter} />
                 </div>
 
                 {/* Country List */}

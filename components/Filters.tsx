@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import Portal from "./Portal";
 
@@ -11,26 +11,34 @@ const defaultFilterProps = {
 type FiltersProps = {
     defaultFilter: string;
     regions: string[];
+    setFilter: Dispatch<SetStateAction<string>>;
 } & typeof defaultFilterProps;
 
 // Render component.
-const Filters = ({ defaultFilter, regions }: FiltersProps) => {
-    const [activeFilter, setActiveFilter] = useState<string>(defaultFilter);
+const Filters = ({ defaultFilter, regions, setFilter }: FiltersProps) => {
+    // Define state of filter text.
+    const [filterText, setFilterText] = useState<string>(defaultFilter);
 
-    // Manage state opening and disclosing filter options.
+    // Define state opening and disclosing filter options.
     const [openFilters, setOpenFilters] = useState<boolean>(false);
 
     const handleFilter = (value: string) => {
+        // Filter the country list.
+        setFilter(value);
+
         // Set the current active filter state.
-        setActiveFilter(value);
+        setFilterText(value);
 
         // Disclose filter options.
         setOpenFilters(false);
     };
 
     const resetFilter = () => {
+        // Filter the country list.
+        setFilter("");
+
         // Set the current active filter state.
-        setActiveFilter(defaultFilter);
+        setFilterText(defaultFilter);
 
         // Disclose filter options.
         setOpenFilters(false);
@@ -43,7 +51,7 @@ const Filters = ({ defaultFilter, regions }: FiltersProps) => {
                     className="flex flex-row justify-between items-center gap-4 w-full"
                     onClick={() => setOpenFilters(!openFilters)}
                 >
-                    {activeFilter}
+                    {filterText}
                     <RiArrowDropDownLine size={20} />
                 </button>
             </div>
