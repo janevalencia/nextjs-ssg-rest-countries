@@ -5,6 +5,7 @@ import api from "../api";
 import { TCountry } from "../types";
 import { Country, Filters, SearchBar } from "../components";
 
+// Render Home page.
 const Home = ({
     countries,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -95,6 +96,7 @@ const Home = ({
     );
 };
 
+// Get initial data on build with getStaticProps.
 export const getStaticProps: GetStaticProps<{
     countries: TCountry[];
 }> = async () => {
