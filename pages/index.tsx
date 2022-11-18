@@ -55,7 +55,7 @@ const Home = ({
                 </div>
 
                 {/* Country List */}
-                <div className="grid grid-cols-1 px-10 py-4 tablet:px-0 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-10">
+                <div className="grid grid-cols-1 tablet:px-0 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-6 gap-6">
                     {searchCountry().length > 0 ? (
                         searchCountry().map((item, index) => (
                             <Country key={index} country={item} />
