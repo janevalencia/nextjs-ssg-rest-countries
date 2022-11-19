@@ -1,4 +1,4 @@
-# FEM - REST Countries API with Theme-Switcher
+# REST Countries API with Theme-Switcher
 
 Solution developed by **Jane Valencia, 2022**.
 
@@ -13,7 +13,6 @@ This repo is to be forked, copied, and used for educational-purpose only.
   - [Local setup](#local-setup)
 - [Process](#process)
   - [Technical-stacks](#technical-stacks)
-  - [What I learned](#what-i-learned)
   - [Future backlogs](#future-backlogs)
   - [Useful resources](#useful-resources)
   - [Deployment](#deployment)
@@ -22,28 +21,32 @@ This repo is to be forked, copied, and used for educational-purpose only.
 
 ## Overview
 
+The REST Countries API is originally a challenge created by FEM (Frontend Mentor). 
+
+Nonetheless, for the purpose of this repository, the challenge has been modified so that the solution is to be developed using the latest React framework, NextJS, and SSG (Static Site Generator) technology.
+
+### The challenge
+
+Your challenge is to integrate with the [REST Countries API](https://restcountries.com) to pull country data and display it similar or as close to the design file.
+
 **To do this challenge, you should have a good understanding of HTML, CSS, JavaScript, and React.**
 
 Check the mobile and desktop design in [/design](./design/) folder.
 
 Check [the style-guide](./style-guide.md) for color-theme, typography, icons to be used.
 
-There are no others assets for this challenge, as the country flags will be pulled from the [REST Countries API](https://restcountries.com) and you can use an icon font library for the icons.
+There are no others assets for this challenge, as the country flags will be pulled from the [REST Countries API](https://restcountries.com) and you can use any icon font library for the icons.
 
-### The challenge
-
-Your challenge is to integrate with the [REST Countries API](https://restcountries.com) to pull country data and display it similar or as close to the design file.
-
-You can use any JavaScript framework/library and have complete control over which packages you use to do things like make HTTP requests or style your project.
+Feel free to use other framework, such as Vue, Gatsby, React CRA, to develop your own solution.
 
 ### Requirement
 
 Your users should be able to:
 
 - See all countries from the API on the homepage.
-- Search for a country using an `input` field.
-- Filter countries by region.
-- Click on a country to see more detailed information on a separate page.
+- Search for a country using by its name, capital, and alternative spellings.
+- Filter countries by region: Africa, Americas, Asia, Europe, Oceania.
+- See the detail page of each country.
 - Click through to the border countries on the detail page.
 - Toggle the color scheme between light and dark mode.
 
@@ -77,12 +80,7 @@ Further, before you deploy always making sure you have run `yarn lint` to ensure
 - [Next.js](https://nextjs.org/) - React framework.
 - [React-Icons](https://react-icons.github.io/react-icons/) - Icons, but feel free to use FontAwesome or any other icon-libraries.
 - [Axios](https://axios-http.com/docs/intro) - Promise-based HTTP Client, but feel free to use `fetch()`.
-
-### What I learned
-
-TBA
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+- The API I am using is https://restcountries.com/v2/
 
 ### Future backlogs
 
@@ -90,11 +88,16 @@ TBA
 
 ### Useful resources
 
-TBA
+Few articles that I found useful in developing this solution:
+
+- NextJS SSG (get initial data on build) `getStaticProps()` https://nextjs.org/docs/basic-features/data-fetching/get-static-props 
+- NextJS SSG (individual page on build) `getStaticPaths()` https://nextjs.org/docs/basic-features/data-fetching/get-static-paths
+- REST Countries API v2 to filter your response https://restcountries.com/v2/{service}?fields={field},{field},{field}
+- Work with Axios in React project https://www.digitalocean.com/community/tutorials/react-axios-react
 
 ### Deployment
 
-As this project is built on using NextJS, I decide to use Vercel to host. 
+As this project is built on using NextJS, I am deploying this solution using Vercel.
 
 How to deploy NextJS project to Vercel:
 1. TBA
@@ -104,9 +107,9 @@ Nonetheless, there are many ways to host your project for free, such as:
 - [GitHub Pages](https://pages.github.com/)
 - [Netlify](https://www.netlify.com/)
 
-Simply choose the platform you are most comfortable and familiar using.
+Simply choose the platform you are most comfortable with and familiar using.
 
-Remember to copy/paste any of your production environment variable into the host platform you are using.
+**Remember to copy any of your production environment variable into the host platform you are using.**
 
 ## Author
 
@@ -120,21 +123,10 @@ Connect with me and drop a 👋 (hello):
 
 ## Final thoughts
 
-I had a lot of fun building this challenge! 
+I had a lot of fun building this solution! 
 
-I love receiving feedback as it helps me improving. So if you have anything you'd like to mention or have any questions over the solution, please drop in your message into the [discussion-thread](TBA).
+Any feedback, mention, or questions over the solution are welcome. Please drop in your message into the [discussion-thread](TBA).
 
 This challenge is completely free and made by the awesome team of Frontend Mentor (FEM). Please continue sharing it with anyone who will find it useful for practice.
-
-If you wish to share your solution, there are multiple ways you can do so:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-Likewise, you may wish to submit your solution on the FEM platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
 
 **Have fun building!** 🚀
