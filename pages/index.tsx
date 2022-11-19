@@ -5,6 +5,24 @@ import api from "../api";
 import { TCountry } from "../types";
 import { Country, Filters, SearchBar } from "../components";
 
+// Get initial data on build with getStaticProps.
+export const getStaticProps: GetStaticProps<{
+    countries: TCountry[];
+}> = async () => {
+    // Fetch data from countries API.
+    const res = await api.get(
+        "all?fields=name,altSpellings,capital,region,population,flags"
+    );
+    const countries = await res.data;
+
+    // Return the static props.
+    return {
+        props: {
+            countries,
+        },
+    };
+};
+
 // Render Home page.
 const Home = ({
     countries,
@@ -22,7 +40,13 @@ const Home = ({
     const [filter, setFilter] = useState<string>("");
 
     // Define state of regions list.
-    const [regions] = useState<string[]>(["Africa", "Americas", "Asia", "Europe", "Oceania"])
+    const [regions] = useState<string[]>([
+        "Africa",
+        "Americas",
+        "Asia",
+        "Europe",
+        "Oceania",
+    ]);
 
     // Component re-render when there is search query & change in list state.
     useEffect(() => {
@@ -55,7 +79,9 @@ const Home = ({
         if (filter !== "") {
             setList(
                 countries.filter((country) => {
-                    return country.region.toLowerCase() === filter.toLowerCase();
+                    return (
+                        country.region.toLowerCase() === filter.toLowerCase()
+                    );
                 })
             );
         } else {
@@ -94,24 +120,6 @@ const Home = ({
             </div>
         </>
     );
-};
-
-// Get initial data on build with getStaticProps.
-export const getStaticProps: GetStaticProps<{
-    countries: TCountry[];
-}> = async () => {
-    // Fetch data from countries API.
-    const res = await api.get(
-        "all?fields=name,altSpellings,callingCodes,capital,subregion,region,population,latlng,area,timezones,borders,flags,currencies,languages,independent"
-    );
-    const countries = await res.data;
-
-    // Return the static props.
-    return {
-        props: {
-            countries,
-        },
-    };
 };
 
 export default Home;
