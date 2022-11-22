@@ -4,8 +4,10 @@ import type {
     GetStaticPropsResult,
     GetStaticPathsResult,
 } from "next";
+import Link from "next/link";
 import api from "../../api";
 import { TCountry } from "../../types";
+import { BiArrowBack } from "react-icons/bi";
 
 type PageParams = {
     slug: string;
@@ -65,11 +67,28 @@ export const getStaticProps = async ({
 const Country = ({
     country,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-    console.log(country);
     return (
-        <>
-            <h1>{country.name}</h1>
-        </>
+        <div className="min-h-screen bg-lt-mode-bg w-full p-6">
+            <Link
+                href="/"
+                className="min-w-[120px] flex flex-row justify-center items-center gap-4 bg-white shadow-md rounded-md border"
+            >
+                <button className="min-w-[120px] flex flex-row justify-center items-center gap-4 bg-white shadow-md rounded-md border">
+                    <BiArrowBack />
+                    Back
+                </button>
+            </Link>
+            <div className="my-8 w-full flex flex-col tablet:flex-row">
+                <picture>
+                    <source srcSet={country.flags.png} type="image/png" />
+                    <img
+                        src={country.flags.png}
+                        alt={country.name}
+                        className="w-[500px] object-cover"
+                    />
+                </picture>
+            </div>
+        </div>
     );
 };
 
