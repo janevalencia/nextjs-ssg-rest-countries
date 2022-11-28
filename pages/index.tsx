@@ -111,7 +111,9 @@ const Home = ({
                 <div className="grid grid-cols-1 px-4 py-10 tablet:px-0 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-6 gap-8">
                     {searchResults.length > 0 ? (
                         searchResults.map((item, index) => (
-                            <Country key={index} country={item} />
+                            <a key={index} href={`/countries/${item.name.toLowerCase().replace(/ /g, "_")}`}>
+                                <Country country={item} />
+                            </a>
                         ))
                     ) : (
                         <p>No such country found.</p>
