@@ -78,15 +78,138 @@ const Country = ({
                     Back
                 </button>
             </Link>
-            <div className="w-full flex flex-col tablet:flex-row justify-between items-center py-20">
-                <picture>
-                    <source srcSet={country.flags.png} type="image/png" />
-                    <img
-                        src={country.flags.png}
-                        alt={country.name}
-                        className="w-[500px] object-cover"
-                    />
-                </picture>
+            <div className="w-full flex flex-col laptop:flex-row justify-between items-center py-5 tablet:py-20">
+                {/* Flag */}
+                <div className="flex-none">
+                    <picture>
+                        <source srcSet={country.flags.png} type="image/png" />
+                        <img
+                            src={country.flags.png}
+                            alt={country.name}
+                            className="tablet:w-[525px] h-[320px] tablet:object-cover object-contain"
+                        />
+                    </picture>
+                </div>
+                {/* Description */}
+                <div className="py-4 tablet:px-4 tablet:w-[525px] laptop:w-full laptop:ml-32">
+                    <h2 className="text-xl tablet:text-center laptop:text-left">
+                        {country.name}
+                    </h2>
+                    <div className="flex flex-col laptop:flex-row pt-6 gap-4">
+                        <div className="w-full">
+                            <p className="font-light mt-2">
+                                <span className="font-normal">
+                                    Population:{" "}
+                                </span>
+                                {country.population
+                                    .toString()
+                                    .replace(
+                                        /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g,
+                                        ","
+                                    )}
+                            </p>
+                            <p className="font-light mt-2">
+                                <span className="font-normal">Area: </span>
+                                {country.area
+                                    .toString()
+                                    .replace(
+                                        /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g,
+                                        ","
+                                    )}{" "}
+                                &#13217;
+                            </p>
+                            <p className="font-light mt-2">
+                                <span className="font-normal">
+                                    Lat / Long:{" "}
+                                </span>
+                                {country.latlng[0]}&deg; / {country.latlng[1]}
+                                &deg;
+                            </p>
+                            <p className="font-light mt-2">
+                                <span className="font-normal">Region: </span>
+                                {country.region}
+                            </p>
+                            <p className="font-light mt-2">
+                                <span className="font-normal">
+                                    Sub Region:{" "}
+                                </span>
+                                {country.subregion}
+                            </p>
+                            <p className="font-light mt-2">
+                                <span className="font-normal">Capital: </span>
+                                {country.capital}
+                            </p>
+                        </div>
+                        <div className="w-full">
+                            <p className="font-light mt-2">
+                                <span className="font-normal">
+                                    Calling Code:{" "}
+                                </span>
+                                {country.callingCodes.map((code, index) => {
+                                    let text = "";
+                                    if (index === 0) {
+                                        text = "+" + code;
+                                    } else {
+                                        text = ", +" + code;
+                                    }
+                                    return text;
+                                })}
+                            </p>
+                            <p className="font-light mt-2">
+                                <span className="font-normal">
+                                    Currencies:{" "}
+                                </span>
+                                {country.currencies.map((currency, index) => {
+                                    let text = "";
+                                    if (index === 0) {
+                                        text = currency.name;
+                                    } else {
+                                        text = ", " + currency.name;
+                                    }
+                                    return text;
+                                })}
+                            </p>
+                            <p className="font-light mt-2">
+                                <span className="font-normal">Languages: </span>
+                                {country.languages.map((language, index) => {
+                                    let text = "";
+                                    if (index === 0) {
+                                        text = language.name;
+                                    } else {
+                                        text = ", " + language.name;
+                                    }
+                                    return text;
+                                })}
+                            </p>
+                            <p className="font-light mt-2">
+                                <span className="font-normal">Timezones: </span>
+                                {country.timezones.map((timezone, index) => {
+                                    let text = "";
+                                    if (index === 0) {
+                                        text = timezone;
+                                    } else {
+                                        text = ", " + timezone;
+                                    }
+                                    return text;
+                                })}
+                            </p>
+                            <p className="font-light mt-2">
+                                <span className="font-normal">
+                                    Alternative Spellings:{" "}
+                                </span>
+                                {country.altSpellings.map((spelling, index) => {
+                                    let text = "";
+                                    if (index === 0) {
+                                        text = spelling;
+                                    } else {
+                                        text = ", " + spelling;
+                                    }
+                                    return text;
+                                })}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
