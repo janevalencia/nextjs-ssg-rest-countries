@@ -68,7 +68,7 @@ const Country = ({
     country,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
-        <div className="min-h-screen bg-lt-mode-bg w-full p-6">
+        <div className="min-h-screen bg-lt-mode-bg w-full px-16 py-6">
             <Link
                 href="/"
                 className="min-w-[120px] flex flex-row justify-center items-center gap-4 bg-white shadow-md rounded-md border"
@@ -78,7 +78,7 @@ const Country = ({
                     Back
                 </button>
             </Link>
-            <div className="my-8 w-full flex flex-col tablet:flex-row">
+            <div className="w-full flex flex-col tablet:flex-row justify-between items-center py-20">
                 <picture>
                     <source srcSet={country.flags.png} type="image/png" />
                     <img

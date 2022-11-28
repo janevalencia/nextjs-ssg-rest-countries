@@ -94,7 +94,7 @@ const Home = ({
             <Head>
                 <title>World of Countries</title>
             </Head>
-            <div className="min-h-screen bg-lt-mode-bg w-full px-6">
+            <div className="min-h-screen bg-lt-mode-bg w-full px-16">
                 {/* Toolbar */}
                 <div className="flex flex-col gap-8 tablet:flex-row tablet:gap-2 py-4 justify-between">
                     {/* Search Bar */}
@@ -108,7 +108,7 @@ const Home = ({
                 </div>
 
                 {/* Country List */}
-                <div className="grid grid-cols-1 px-4 py-4 laptop:px-0 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-6 gap-8">
+                <div className="grid grid-cols-1 px-4 py-10 tablet:px-0 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-6 gap-8">
                     {searchResults.length > 0 ? (
                         searchResults.map((item, index) => (
                             <Country key={index} country={item} />
