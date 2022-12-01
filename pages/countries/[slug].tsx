@@ -96,7 +96,7 @@ const Country = ({
                     Back
                 </button>
             </Link>
-            <div className="w-full flex flex-col laptop:flex-row justify-between items-center py-5 tablet:py-20">
+            <div className="w-full flex flex-col laptop:flex-row justify-between py-5 tablet:py-20">
                 {/* Flag */}
                 <div className="flex-none">
                     <picture>
@@ -104,7 +104,7 @@ const Country = ({
                         <img
                             src={country.flags.png}
                             alt={country.name}
-                            className="tablet:w-[525px] h-[320px] tablet:object-cover object-contain"
+                            className="tablet:w-[525px] h-[320px] tablet:object-cover object-contain border shadow-md"
                         />
                     </picture>
                 </div>
