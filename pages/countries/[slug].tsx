@@ -4,6 +4,7 @@ import type {
     GetStaticPropsResult,
     GetStaticPathsResult,
 } from "next";
+import { useState } from "react";
 import Link from "next/link";
 import api from "../../api";
 import { TCountry } from "../../types";
@@ -15,6 +16,7 @@ type PageParams = {
 
 type CountryPageProps = {
     country: TCountry;
+    borders: string[];
 };
 
 // Generate page paths for each country.
@@ -56,9 +58,23 @@ export const getStaticProps = async ({
         .get(`name/${slug.replace(/_/g, "%20")}`)
         .then((res) => res.data);
 
+    // Get the country borders code and make it into one string.
+    const bordersQueryString = country[0].borders?.toString();
+
+    // Fetch the selected country borders and create a custom array containing name of the borders.
+    const bordersName: string[] = [];
+    if (bordersQueryString) {
+        const borders: any[] = await api
+            .get(`alpha?codes=${bordersQueryString}`)
+            .then((res) => res.data);
+
+        borders.map((border) => bordersName.push(border.name));
+    }
+
     return {
         props: {
             country: country[0],
+            borders: bordersName,
         },
     };
 };
@@ -66,7 +82,9 @@ export const getStaticProps = async ({
 // Render Country Individual Page.
 const Country = ({
     country,
+    borders,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const [countryBorders] = useState<string[]>(borders);
     return (
         <div className="min-h-screen bg-lt-mode-bg w-full px-16 py-6">
             <Link
@@ -91,7 +109,7 @@ const Country = ({
                     </picture>
                 </div>
                 {/* Description */}
-                <div className="py-4 tablet:px-4 tablet:w-[525px] laptop:w-full laptop:ml-32">
+                <div className="w-full py-4 tablet:px-4 tablet:w-[525px] laptop:w-full laptop:ml-32">
                     <h2 className="text-xl tablet:text-center laptop:text-left">
                         {country.name}
                     </h2>
@@ -207,6 +225,28 @@ const Country = ({
                                     return text;
                                 })}
                             </p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-4 laptop:flex-row laptop:items-center flex-wrap pt-6">
+                        <h3 className="flex-none text-lg laptop:text-base font-normal">
+                            Border Countries:
+                        </h3>
+                        <div className="flex flex-row flex-wrap gap-4">
+                            {borders.length > 0 ? (
+                                borders.map((border, index) => (
+                                    <a
+                                        key={index}
+                                        className="border shadow-md px-5 py-2 rounded-md bg-white text-center min-w-[100px]"
+                                        href={`/countries/${border
+                                            .toLowerCase()
+                                            .replace(/ /g, "_")}`}
+                                    >
+                                        {border}
+                                    </a>
+                                ))
+                            ) : (
+                                <p className="font-light">None</p>
+                            )}
                         </div>
                     </div>
                 </div>
