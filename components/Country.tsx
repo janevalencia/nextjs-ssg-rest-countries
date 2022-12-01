@@ -8,7 +8,7 @@ type CountryProps = {
 // Render Country component.
 const Country = ({ country }: CountryProps) => {
     return (
-        <div className="bg-white shadow-md rounded-md hover:cursor-pointer hover:scale-105 duration-300">
+        <div className="bg-white shadow-md rounded-md hover:cursor-pointer hover:scale-105 duration-300 h-full">
             <div className="mb-4">
                 <picture>
                     <source srcSet={country.flags.png} type="image/png" />
@@ -21,7 +21,7 @@ const Country = ({ country }: CountryProps) => {
             </div>
             <div className="mb-4 p-6">
                 <h2 className="text-lg">{country.name}</h2>
-                <div className="mt-4">
+                <div className="mt-4 h-full">
                     <p className="font-light">
                         <span className="font-normal">Population: </span>
                         {country.population}
