@@ -5,6 +5,24 @@ import api from "../api";
 import { TCountry } from "../types";
 import { Country, Filters, SearchBar } from "../components";
 
+// Get initial data on build with getStaticProps.
+export const getStaticProps: GetStaticProps<{
+    countries: TCountry[];
+}> = async () => {
+    // Fetch data from countries API.
+    const res = await api.get(
+        "all?fields=name,altSpellings,capital,region,population,flags"
+    );
+    const countries = await res.data;
+
+    // Return the static props.
+    return {
+        props: {
+            countries,
+        },
+    };
+};
+
 // Render Home page.
 const Home = ({
     countries,
@@ -22,7 +40,13 @@ const Home = ({
     const [filter, setFilter] = useState<string>("");
 
     // Define state of regions list.
-    const [regions] = useState<string[]>(["Africa", "Americas", "Asia", "Europe", "Oceania"])
+    const [regions] = useState<string[]>([
+        "Africa",
+        "Americas",
+        "Asia",
+        "Europe",
+        "Oceania",
+    ]);
 
     // Component re-render when there is search query & change in list state.
     useEffect(() => {
@@ -55,7 +79,9 @@ const Home = ({
         if (filter !== "") {
             setList(
                 countries.filter((country) => {
-                    return country.region.toLowerCase() === filter.toLowerCase();
+                    return (
+                        country.region.toLowerCase() === filter.toLowerCase()
+                    );
                 })
             );
         } else {
@@ -68,7 +94,7 @@ const Home = ({
             <Head>
                 <title>World of Countries</title>
             </Head>
-            <div className="min-h-screen bg-lt-mode-bg w-full px-6">
+            <div className="min-h-screen bg-lt-mode-bg w-full px-16">
                 {/* Toolbar */}
                 <div className="flex flex-col gap-8 tablet:flex-row tablet:gap-2 py-4 justify-between">
                     {/* Search Bar */}
@@ -82,10 +108,12 @@ const Home = ({
                 </div>
 
                 {/* Country List */}
-                <div className="grid grid-cols-1 tablet:px-0 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-6 gap-6">
+                <div className="grid grid-cols-1 px-4 py-10 tablet:px-0 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-6 gap-8">
                     {searchResults.length > 0 ? (
                         searchResults.map((item, index) => (
-                            <Country key={index} country={item} />
+                            <a key={index} href={`/countries/${item.name.toLowerCase().replace(/ /g, "_")}`}>
+                                <Country country={item} />
+                            </a>
                         ))
                     ) : (
                         <p>No such country found.</p>
@@ -94,24 +122,6 @@ const Home = ({
             </div>
         </>
     );
-};
-
-// Get initial data on build with getStaticProps.
-export const getStaticProps: GetStaticProps<{
-    countries: TCountry[];
-}> = async () => {
-    // Fetch data from countries API.
-    const res = await api.get(
-        "all?fields=name,altSpellings,callingCodes,capital,subregion,region,population,latlng,area,timezones,borders,flags,currencies,languages,independent"
-    );
-    const countries = await res.data;
-
-    // Return the static props.
-    return {
-        props: {
-            countries,
-        },
-    };
 };
 
 export default Home;
