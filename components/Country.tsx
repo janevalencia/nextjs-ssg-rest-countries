@@ -24,7 +24,9 @@ const Country = ({ country }: CountryProps) => {
                 <div className="mt-4 h-full">
                     <p className="font-light">
                         <span className="font-normal">Population: </span>
-                        {country.population}
+                        {country.population
+                            .toString()
+                            .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
                     </p>
                     <p className="font-light">
                         <span className="font-normal">Region: </span>
