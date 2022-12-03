@@ -20,3 +20,31 @@
         @apply px-5 py-2;
     }
 }
+
+body.dark .page-container {
+    @apply bg-dk-mode-bg;
+}
+
+body.dark .dark-mode-container,
+body.dark .dark-mode-btn,
+body.dark .dark-mode-border-color  {
+    @apply bg-dk-mode-element border-dk-mode-element;
+}
+
+body.dark h1, 
+body.dark h2, 
+body.dark h3, 
+body.dark h4, 
+body.dark h5, 
+body.dark h6, 
+body.dark p,
+body.dark li,
+body.dark .icon,
+body.dark input {
+    @apply text-white;
+}
+
+body.dark .theme-toggler-text,
+body.dark a {
+    @apply text-gray-100 hover:text-white
+}

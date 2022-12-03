@@ -86,14 +86,14 @@ const Country = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
     const [countryBorders] = useState<string[]>(borders);
     return (
-        <div className="min-h-screen bg-lt-mode-bg w-full px-16 py-6">
+        <div className="page-container min-h-screen bg-lt-mode-bg w-full px-16 py-6">
             <Link
                 href="/"
                 className="min-w-[120px] flex flex-row justify-center items-center gap-4 bg-white shadow-md rounded-md border"
             >
-                <button className="min-w-[120px] flex flex-row justify-center items-center gap-4 bg-white shadow-md rounded-md border">
-                    <BiArrowBack />
-                    Back
+                <button className="dark-mode-btn min-w-[120px] flex flex-row justify-center items-center gap-4 bg-white shadow-md rounded-md border">
+                    <BiArrowBack className="icon" />
+                    <p>Back</p>
                 </button>
             </Link>
             <div className="w-full flex flex-col tablet:items-center laptop:flex-row justify-between laptop:items-start py-5 tablet:py-20">
@@ -104,7 +104,7 @@ const Country = ({
                         <img
                             src={country.flags.png}
                             alt={country.name}
-                            className="tablet:w-[525px] max-h-[320px] tablet:object-cover border shadow-md"
+                            className="tablet:w-[525px] max-h-[320px] tablet:object-cover border shadow-md dark-mode-border-color"
                         />
                     </picture>
                 </div>
@@ -236,7 +236,7 @@ const Country = ({
                                 borders.map((border, index) => (
                                     <a
                                         key={index}
-                                        className="border shadow-md px-5 py-2 rounded-md bg-white text-center min-w-[100px]"
+                                        className="dark-mode-btn border shadow-md px-5 py-2 rounded-md bg-white text-center min-w-[100px]"
                                         href={`/countries/${border
                                             .toLowerCase()
                                             .replace(/ /g, "_")}`}
