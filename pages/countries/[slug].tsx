@@ -143,7 +143,7 @@ const Country = ({
                                     Lat / Long:{" "}
                                 </span>
                                 {country.latlng
-                                    ? `${country.latlng[0]}&deg / ${country.latlng[1]}&deg`
+                                    ? <>{country.latlng[0]}&deg; / {country.latlng[1]}&deg;</>
                                     : "N/A"}
                             </p>
                             <p className="font-light mt-2">
