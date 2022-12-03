@@ -155,7 +155,7 @@ const Country = ({
                             </p>
                             <p className="font-light mt-2">
                                 <span className="font-normal">Capital: </span>
-                                {country.capital}
+                                {country.capital || 'N/A'}
                             </p>
                         </div>
                         <div className="w-full">
@@ -163,7 +163,7 @@ const Country = ({
                                 <span className="font-normal">
                                     Calling Code:{" "}
                                 </span>
-                                {country.callingCodes.map((code, index) => {
+                                {country.callingCodes ? country.callingCodes.map((code, index) => {
                                     let text = "";
                                     if (index === 0) {
                                         text = "+" + code;
@@ -171,13 +171,13 @@ const Country = ({
                                         text = ", +" + code;
                                     }
                                     return text;
-                                })}
+                                }) : 'N/A'}
                             </p>
                             <p className="font-light mt-2">
                                 <span className="font-normal">
                                     Currencies:{" "}
                                 </span>
-                                {country.currencies.map((currency, index) => {
+                                {country.currencies ? country.currencies.map((currency, index) => {
                                     let text = "";
                                     if (index === 0) {
                                         text = currency.name;
@@ -185,11 +185,11 @@ const Country = ({
                                         text = ", " + currency.name;
                                     }
                                     return text;
-                                })}
+                                }) : 'N/A'}
                             </p>
                             <p className="font-light mt-2">
                                 <span className="font-normal">Languages: </span>
-                                {country.languages.map((language, index) => {
+                                {country.languages ? country.languages.map((language, index) => {
                                     let text = "";
                                     if (index === 0) {
                                         text = language.name;
@@ -197,11 +197,11 @@ const Country = ({
                                         text = ", " + language.name;
                                     }
                                     return text;
-                                })}
+                                }) : 'N/A'}
                             </p>
                             <p className="font-light mt-2">
                                 <span className="font-normal">Timezones: </span>
-                                {country.timezones.map((timezone, index) => {
+                                {country.timezones ? country.timezones.map((timezone, index) => {
                                     let text = "";
                                     if (index === 0) {
                                         text = timezone;
@@ -209,13 +209,13 @@ const Country = ({
                                         text = ", " + timezone;
                                     }
                                     return text;
-                                })}
+                                }) : 'N/A'}
                             </p>
                             <p className="font-light mt-2">
                                 <span className="font-normal">
                                     Alternative Spellings:{" "}
                                 </span>
-                                {country.altSpellings.map((spelling, index) => {
+                                {country.altSpellings ? country.altSpellings.map((spelling, index) => {
                                     let text = "";
                                     if (index === 0) {
                                         text = spelling;
@@ -223,7 +223,7 @@ const Country = ({
                                         text = ", " + spelling;
                                     }
                                     return text;
-                                })}
+                                }) : 'N/A'}
                             </p>
                         </div>
                     </div>
