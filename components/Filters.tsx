@@ -46,13 +46,13 @@ const Filters = ({ defaultFilter, regions, setFilter }: FiltersProps) => {
 
     return (
         <div className="relative w-[200px]">
-            <div className="py-2 w-full bg-white rounded-md shadow-md">
+            <div className="dark-mode-container py-2 w-full bg-white rounded-md shadow-md">
                 <button
-                    className="flex flex-row justify-between items-center gap-4 w-full"
+                    className="dark-mode-btn flex flex-row justify-between items-center gap-4 w-full"
                     onClick={() => setOpenFilters(!openFilters)}
                 >
-                    {filterText}
-                    <RiArrowDropDownLine size={20} />
+                    <p>{filterText}</p>
+                    <RiArrowDropDownLine size={20} className="icon" />
                 </button>
             </div>
             <div
@@ -61,7 +61,7 @@ const Filters = ({ defaultFilter, regions, setFilter }: FiltersProps) => {
             >
                 {openFilters && (
                     <Portal wrapperId="country_filter_options">
-                        <div className="p-5 w-full bg-white rounded-md shadow-md">
+                        <div className="dark-mode-container p-5 w-full bg-white rounded-md shadow-md">
                             <ul className="flex flex-col gap-2">
                                 {regions.map((region, index) => (
                                     <li
