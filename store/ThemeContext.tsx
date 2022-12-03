@@ -55,13 +55,13 @@ export const ThemeContextProvider = (
         document!.querySelector("body")!.classList.toggle("dark");
 
         // Update local storage value.
-        localStorage.setItem("isDarkMode", `${isDarkMode}`);
+        localStorage.setItem("isDarkMode", `${!darkTheme}`);
     }
 
     // Render context provider.
     return (
         <ThemeContext.Provider
-            value={{ isDarkMode: false, toggleThemeHandler }}
+            value={{ isDarkMode: isDarkMode, toggleThemeHandler }}
         >
             {props.children}
         </ThemeContext.Provider>
