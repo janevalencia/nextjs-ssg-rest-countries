@@ -54,8 +54,8 @@ Your app must be mobile-responsive!
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution Repository: [nextjs-ssg-rest-countries](https://github.com/janevalencia/nextjs-ssg-rest-countries)
+- Live Site: [Where In The World? developed by Jane Valencia](https://nextjs-ssg-rest-countries.vercel.app/)
 
 ### Local setup
 
@@ -84,7 +84,7 @@ Further, before you deploy always making sure you have run `yarn lint` to ensure
 
 ### Future backlogs
 
-TBA
+This project is currently final, though open to any suggestions to additional features and future improvements :) 
 
 ### Useful resources
 
@@ -94,13 +94,36 @@ Few articles that I found useful in developing this solution:
 - NextJS SSG (individual page on build) `getStaticPaths()` https://nextjs.org/docs/basic-features/data-fetching/get-static-paths
 - REST Countries API v2 to filter your response https://restcountries.com/v2/{service}?fields={field},{field},{field}
 - Work with Axios in React project https://www.digitalocean.com/community/tutorials/react-axios-react
+- Using Context API to have global dark/light theme-mode https://javascript.plainenglish.io/how-to-implement-dark-light-themes-in-a-next-js-app-using-context-hook-tailwindcss-336558dd4579
 
 ### Deployment
+
+Make sure on your `package.json` has the following scripts:
+```
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+```
+
+Things you need to do before deploying the production build on Vercel:
+1. Make sure you run `yarn lint`.
+2. Then run `yarn build` and ensure you can create the static build without any errors. If you see any errors, please fix it before proceeding further.
+3. Test your production-preview build by running `yarn start`.
+4. Once it's all good, move on to Vercel!
 
 As this project is built on using NextJS, I am deploying this solution using Vercel.
 
 How to deploy NextJS project to Vercel:
-1. TBA
+1. Sign up a Vercel account using Github auth
+2. Add new project to Vercel
+3. Choose to connect with Github
+4. Ensure your Github permits Vercel
+5. When ask to configure project, no need to make any changes and just click Deploy!
+6. Shouldn't take long and your project should now be live.
+7. Optional: Vercel will take the default branch set on your Git project. If you wish to use other branch for example a `production` branch, then go to your project > settings > git > change the production branch to the branch you wish
 
 Nonetheless, there are many ways to host your project for free, such as:
 
@@ -109,7 +132,7 @@ Nonetheless, there are many ways to host your project for free, such as:
 
 Simply choose the platform you are most comfortable with and familiar using.
 
-**Remember to copy any of your production environment variable into the host platform you are using.**
+**Remember to copy any of your production environment variable into the host platform you are using (if you have any).**
 
 ## Author
 
