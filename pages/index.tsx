@@ -94,9 +94,9 @@ const Home = ({
             <Head>
                 <title>World of Countries</title>
             </Head>
-            <div className="page-container min-h-screen bg-lt-mode-bg w-full px-16">
+            <div className="page-container min-h-screen bg-lt-mode-bg w-full px-6 laptop:px-12">
                 {/* Toolbar */}
-                <div className="flex flex-col gap-8 tablet:flex-row tablet:gap-2 py-4 justify-between">
+                <div className="flex flex-col gap-8 tablet:flex-row tablet:gap-2 py-6 justify-between">
                     {/* Search Bar */}
                     <SearchBar
                         value={query}
@@ -108,7 +108,7 @@ const Home = ({
                 </div>
 
                 {/* Country List */}
-                <div className="grid grid-cols-1 px-4 py-10 tablet:px-0 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-6 gap-8">
+                <div className="grid grid-cols-1 py-10 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-6 gap-8">
                     {searchResults.length > 0 ? (
                         searchResults.map((item, index) => (
                             <a key={index} href={`/countries/${item.name.toLowerCase().replace(/ /g, "_")}`}>
