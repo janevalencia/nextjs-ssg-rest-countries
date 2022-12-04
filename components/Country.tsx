@@ -15,7 +15,7 @@ const Country = ({ country }: CountryProps) => {
                     <img
                         src={country.flags.png}
                         alt={country.name}
-                        className="rounded-t-md w-full h-[250px] laptop:h-[200px] object-cover"
+                        className="rounded-t-md w-full tablet:h-[250px] laptop:h-[200px] tablet:object-cover"
                     />
                 </picture>
             </div>
