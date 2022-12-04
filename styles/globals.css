@@ -48,3 +48,11 @@ body.dark .theme-toggler-text,
 body.dark a {
     @apply text-gray-100 hover:text-white
 }
+
+.return-link {
+    @apply text-blue-600;
+}
+
+body.dark .return-link {
+    @apply text-blue-400;
+}
