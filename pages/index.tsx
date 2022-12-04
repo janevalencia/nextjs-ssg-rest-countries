@@ -94,7 +94,7 @@ const Home = ({
             <Head>
                 <title>World of Countries</title>
             </Head>
-            <div className="page-container min-h-screen bg-lt-mode-bg w-full px-6 tablet:px-16">
+            <div className="page-container min-h-screen bg-lt-mode-bg w-full px-6 laptop:px-16">
                 {/* Toolbar */}
                 <div className="flex flex-col gap-8 tablet:flex-row tablet:gap-2 py-6 justify-between">
                     {/* Search Bar */}

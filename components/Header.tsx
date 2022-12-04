@@ -11,7 +11,7 @@ const Header = () => {
 
     // Render.
     return (
-        <header className="dark-mode-container flex flex-col items-start tablet:flex-row flex-wrap tablet:justify-between tablet:items-center border-b-2 border-gray-100 w-full min-h-[8vh] px-6 tablet:px-16 py-6">
+        <header className="dark-mode-container flex flex-col items-start tablet:flex-row flex-wrap tablet:justify-between tablet:items-center border-b-2 border-gray-100 w-full min-h-[8vh] px-6 laptop:px-16 py-6">
             <h1 className="text-lg py-2 tablet:text-xl desktop:text-2xl">
                 Where in the world?
             </h1>

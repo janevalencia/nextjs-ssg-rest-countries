@@ -26,7 +26,7 @@ type FooterProps = {
 // Render component.
 const Footer = (props: FooterProps) => {
     return (
-        <footer className="dark-mode-container w-full px-6 tablet:px-16 py-6 border-t-2 border-gray-100 tablet:flex align-top justify-between gap-2">
+        <footer className="dark-mode-container w-full px-6 laptop:px-16 py-6 border-t-2 border-gray-100 tablet:flex align-top justify-between gap-2">
             <div className="mb-4">
                 <h2 className="font-bold text-sm laptop:text-base">
                     Frontend Mentor Challenge
