@@ -92,7 +92,7 @@ const Country = ({
             <Head>
                 <title>{country.name}</title>
             </Head>
-            <div className="page-container min-h-screen bg-lt-mode-bg w-full px-6 laptop:px-16 py-6">
+            <div className="page-container min-h-screen bg-lt-mode-bg w-full px-6 laptop:px-12 py-6">
                 <Link
                     href="/"
                     className="min-w-[120px] flex flex-row justify-center items-center gap-4 bg-white shadow-md rounded-md border"
