@@ -11,8 +11,8 @@ const Header = () => {
 
     // Render.
     return (
-        <header className="dark-mode-container flex flex-col items-start tablet:flex-row flex-wrap tablet:justify-between tablet:items-center border-b-2 border-gray-100 w-full min-h-[8vh] px-6 laptop:px-12 py-6">
-            <h1 className="text-lg py-2 tablet:text-xl desktop:text-2xl">
+        <header data-testid="woc-header" className="dark-mode-container flex flex-col items-start tablet:flex-row flex-wrap tablet:justify-between tablet:items-center border-b-2 border-gray-100 w-full min-h-[8vh] px-6 laptop:px-12 py-6">
+            <h1 data-testid="woc-brand-title" className="text-lg py-2 tablet:text-xl desktop:text-2xl">
                 Where in the world?
             </h1>
             <button className="p-0" onClick={() => {themeContext.toggleThemeHandler()}}>

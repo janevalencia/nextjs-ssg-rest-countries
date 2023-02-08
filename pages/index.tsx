@@ -51,7 +51,7 @@ const Home = ({
     // Component re-render when there is search query & change in list state.
     useEffect(() => {
         setSearchResults(
-            list.filter((country) => {
+            list?.filter((country) => {
                 return (
                     country.name.toLowerCase().indexOf(query.toLowerCase()) >
                         -1 ||
@@ -109,8 +109,8 @@ const Home = ({
 
                 {/* Country List */}
                 <div className="grid grid-cols-1 py-10 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-6 gap-8">
-                    {searchResults.length > 0 ? (
-                        searchResults.map((item, index) => (
+                    {searchResults?.length > 0 ? (
+                        searchResults?.map((item, index) => (
                             <a key={index} href={`/countries/${item.name.toLowerCase().replace(/ /g, "_")}`}>
                                 <Country country={item} />
                             </a>
